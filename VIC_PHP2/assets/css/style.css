@@ -1,0 +1,337 @@
+html {
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    color: #000;
+}
+
+a{
+    text-decoration: none;
+}
+
+.app{
+    padding: 10px 24px;
+}
+
+.btn{
+    font-size: 1.6rem;
+    background: #e0e1e3;
+    padding: 14px 20px;
+    border-radius: 4px;
+    color: #666;
+    outline: 0;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    border: 0;
+    cursor: pointer;
+
+}
+.btn:hover,
+.btn.btn--primary{
+    color: #fff;
+    background: #2185d0;
+}
+
+.btn.btn--back{
+    padding: 8px 14px;
+}
+
+.btn + .btn{
+    margin-left: 8px;
+}
+
+header{
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+.wrap-form{
+    margin-bottom: 18px;
+}
+.manage-bar,
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.search-bar{
+    max-width: 600px;
+    width: 100%;
+}
+.search-bar>div{
+    position: relative;
+    width: 100%;
+}
+#search.error{
+    border: 2px solid red;
+}
+
+.search-bar>div input[type="search"]{
+    border: 2px solid #ddd;
+    width: 100%;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+.search-bar>div button{
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    outline: 0;
+    border: 0;
+    background: #888;
+    cursor: pointer;
+}
+
+.search-bar>div button i{
+    position: absolute;
+    top: 51%;
+    right: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.sort-bar{
+    margin-top: 16px;
+}
+.sort-bar>div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-input input,
+.form-input select{
+    border: 2px solid #ddd;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+.form-input input[type="submit"] {
+    padding: 12px 22px;
+    color: #666;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-input.error input,
+.form-input.error select {
+    border-color: red;
+}
+
+
+/* Begin Main */
+.table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th,
+.table td{
+    border: 1px solid #ddd;
+    padding: 12px 18px;
+    text-align: left;
+}
+
+.table th{
+    background: #f9f9f9;
+    font-weight: 600;
+}
+
+.table td{
+    font-weight: 400;
+}
+.table td:last-child{
+    font-size: 2rem;
+}
+.table td:last-child span + span{
+    margin-left: 4px;
+}
+.table td:last-child span{
+    cursor: pointer;
+}
+
+
+/* End Main */
+
+/* Begin Pagination */
+.pagination{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.pagination ul li span,
+.pagination ul li div{
+    display: block;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    padding: 14px 22px;
+    color: #000;
+    
+}
+.pagination ul li div{
+    cursor: pointer;
+}
+
+.pagination ul li div i{
+    font-size: 2.4rem;
+    line-height: 0;
+    position: relative;
+    top: 5px;
+}
+.pagination ul li:first-child div{
+    border-radius: 4px 0 0 4px ;
+}
+.pagination ul li:last-child span,
+.pagination ul li:last-child div{
+    border-right: 1px solid #ddd;
+    border-radius: 0 4px 4px 0;
+}
+.pagination ul li span.active{
+    background: #2185d0;
+    color: #fff;
+}
+
+
+/* End Pagination */
+
+
+/*================ ADD PRODUCT ================*/
+.form-group.center{
+    justify-content: center;
+}
+
+.errors{
+    color: red;
+    font-size: 1.2rem;
+}
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.form-group label{
+    width: 200px;
+}
+.form-control{
+    flex: 1;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    
+}
+
+.form-control:not(input[type="file"]){
+    padding: 12px 22px;
+    border: 2px solid #ddd;
+}
+
+.form-group + .form-group{
+    margin-top: 22px;
+}
+
+.form-group img + img{
+    margin-left: 8px;
+}
+
+p.error{
+    color: red;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 32px;
+    left: 62%;
+    transform: translateX(-50%);
+}
+
+
+/*================ MODAL ================*/
+.modal.active{
+    display: block;
+}
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.loader-overlay,
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 22px;
+    border-radius: 4px;
+    width: 699px;
+}
+
+.modal-close{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+}
+.modal-close i{
+    font-size: 2.4rem;
+}
+
+/* ===== Loader ===== */
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-right: 16px solid green;
+    border-bottom: 16px solid red;
+    border-left: 16px solid pink;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
