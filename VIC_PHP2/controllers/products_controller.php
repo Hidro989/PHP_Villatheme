@@ -101,7 +101,7 @@
             try{
                 Product::update($product);
                 // Add Category/Tag for newest product
-                if($request['tags'] != null && $request['categories'] !=  null){
+                if(isset($request['tags']) && isset($request['categories'])){
                     Product::addCategoryDetail($product->id, array_merge($request['categories'], $request['tags']));
                 }
                 
@@ -209,7 +209,7 @@
             $success = 'Update product successfully';
             try{
                 Product::update($product);
-                if($request['tags'] != null && $request['categories'] !=  null){
+                if(isset($request['tags']) && isset($request['categories'])){
                     Product::updateProperty($request['id'], array_merge($request['categories'], $request['tags']));
                 }
             }catch(Exception $e){
@@ -231,11 +231,11 @@
             }
             // fix delete folder
             $targetDirectory  = './assets/images/';
-            $imageDirectory = explode('/', $product->image)[3];
+            $targetDirectory .= "product$product->id";
 
 
-            if (is_dir($targetDirectory.$imageDirectory)) {
-                $this->deleteDir($targetDirectory.$imageDirectory);
+            if (is_dir($targetDirectory)) {
+                $this->deleteDir($targetDirectory);
             }
 
             $success = 'Delete product successfully';
@@ -253,12 +253,9 @@
             $url = 'https://villatheme.com/extensions/';
             $html = file_get_contents($url);
             $pattern = '/<h2 class="woocommerce-loop-product__title"><a href="(.+)">(.+)<\/a><\/h2>/i';
-            $j = 0;
-            $count = 0;
 
             preg_match_all($pattern, $html, $urlmatches);
 
-            //$totalRecords = count($urlmatches[1]);
             $this->renderJson(array('records' => $urlmatches[1]));
             
         }

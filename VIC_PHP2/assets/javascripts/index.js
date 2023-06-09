@@ -213,8 +213,9 @@ function sendDataLoadWholePage(url, method = 'GET'){
 
 function showErrorFromServer(errors, e){
     let errorsEle = $('.errors');
-    if(errors == null){
+    if(errors == null && errors == undefined){
         errorsEle.innerHTML = '';
+        return;
     }
     let htmlErr = [];
     errors.forEach(ele => {
